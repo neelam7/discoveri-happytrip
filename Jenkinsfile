@@ -18,12 +18,7 @@ powershell 'mvn clean package'
 archiveArtifacts 'target/*.war'
 }
 }
-	stage('Email Notification') { 
-      mail bcc: '', body: '''Hi ,
-Welcome to Jenkins email alert.
-Thanks & Regards,
-Neelam Chouhan''', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'neelam7c@gmail.com'
-	  }
+	
 stage ('Deploy To Prod'){
   input{
     message "Do you want to proceed for production deployment?"
